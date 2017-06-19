@@ -18,7 +18,7 @@
     <div class="widthControl">
     </div>
   </div>
-  <!-- /.topBanner --> 
+  <!-- /.topBanner -->  
   <div class="top">
     <div class="widthControl">
       <a href="#" class="logo"></a>
@@ -48,21 +48,25 @@
          <div class="indexCalendar clearfix">
            <div class="cal-left">
              <div class="calendarOuter">
+               <a href="#" class="indexBtn radius">创建日程</a>
+               <a href="#" class="indexBtn radius">创建会议</a>
                <div class="cal">
                    <script type="text/template" id="template">
 					 <div class="clndr-controls">
-						  <div class="month"><%= month %></div>
-						  <div class="clndr-previous-button">&lsaquo;</div>
-						  <div class="clndr-next-button">&rsaquo;</div>
+						  <div class="month"><%= year %>年<%= month %>月</div>
+						  <div class="clndr-previous-button"><i class="iconfont icon-left"></i></div>
+						  <div class="clndr-next-button"><i class="iconfont icon-right"></i></div>
 					  </div>
 					  <div class="clndr-grid">
-						  <div class="days-of-the-week">
-						  <% _.each(daysOfTheWeek, function (day) { %>
+						  <div class="days-of-the-week clearfix">
+						  <div class="headerDays clearfix">
+						   <% _.each(daysOfTheWeek, function (day) { %>
 							  <div class="header-day"><%= day %></div>
 						  <% }); %>
-							  <div class="days">
+						  </div>
+							  <div class="days clearfix">
 							  <% _.each(days, function (day) { %>
-								  <div class="<%= day.classes %>"><%= day.day %></div>
+								  <div class="<%= day.classes %>"><i><%= day.day %></i></div>
 							  <% }); %>
 							  </div>
 						  </div>
@@ -71,11 +75,24 @@
                </div>
              </div>
            </div>
-           <div class="cal-right">3</div>
+           <div class="cal-right">
+             <div class="indexTab">
+              <a href="#" class="active">全部·16</a><a href="#">会议·11</a><a href="#">事项·5</a>
+             </div>
+             <div class="tabCont">
+               <ul>
+               	<li><span class="time">09:20-10:00</span><div><h3>资产划转内部沟通会</h3><p><i class="iconfont icon-address"></i>13号楼1号会议室</p></div><span class="status">我的会议</span></li>
+                <li><span class="time">09:20-10:00</span><div><h3>请假流程审批</h3></div><span class="status">我的事项</span></li>
+                <li><span class="time">09:20-10:00</span><div><h3>资产划转内部沟通会</h3><p><i class="iconfont icon-address"></i>13号楼1号会议室</p></div></li>
+                <li><span class="time">09:20-10:00</span><div><h3>请假流程审批请假流程审批请假流程审批请假流程审批</h3></div></li>
+                <li><span class="time">09:20-10:00</span><div><h3>资产划转内部沟通会资产划转内部沟通会资产划转内部沟通会</h3><p><i class="iconfont icon-address"></i>13号楼1号会议室</p></div><span class="status">我的会议</span></li>
+               </ul>
+             </div>
+           </div>
          </div>
        </div>
        <div class="btnGroup"><a href="#" class="indexBtn radius">查看更多</a></div>
-      </div>
+      </div> 
     </div>
   </div>
   <!-- /.container -->
@@ -98,16 +115,34 @@
 <!-- /.wrapper -->
 <script src="js/jquery.min.js"></script>
 <!--clndr 日历控件相关依赖-->
-<script src="js/underscore-min.js"></script>
+<script src="js/underscore-min.js"></script> 
 <script src="js/moment.min.js"></script>
 <script src="js/clndr.min.js"></script>
 <!--clndr 日历控件 end-->
 <script src="js/common.js"></script>
 <script>
+
+moment.locale('en', {
+    months : [
+        "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"//设置阿拉伯数字月份
+    ]
+});
+
 $('.cal').clndr({
-	template: $('#template').html(),
-	weekOffset: 1,
-	daysOfTheWeek: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+	template: $('#template').html(),//指定模板
+	weekOffset: 1,//指定一周从周一开始
+	moment: moment,
+	forceSixRows: true,//强制显示6行
+	daysOfTheWeek: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],//设置中文星期名称 
+	clickEvents:{//点击事件示例
+	  click: function (target) {
+			  if ($(target.element).hasClass('today')) {
+				  console.log('You picked today!');
+			  } else {
+				  console.log('That date is not today');
+			  }
+		  }
+	  }
 	});
 </script>
 </body> 
