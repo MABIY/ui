@@ -71,7 +71,7 @@
           </div>
           <div class="mailRight">
             <div class="mr-title">
-              <div class="posLeft"><i class="iconfont icon-mail-zhankai"></i></div>
+              <div class="posLeft"><i class="iconfont icon-mail-zhankai" onClick="asideToggle()"></i></div>
               <h5>收件箱<span>（6封邮件）</span></h5>
               <div class="posRight"><a href="#">编辑</a></div>
             </div>
@@ -284,6 +284,9 @@
                <a href="#">4</a>
              </div>
             </div>
+            <div class="mailDetail scroll">
+              123123
+            </div>
           </div>
         </div>
       </div>
@@ -296,6 +299,63 @@
   <!-- /.footer --> 
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>
+<script>
+    function asideToggle(){//展开收起左侧菜单
+		$(".mailRight").toggleClass("animation");
+		if($(".mailRight").hasClass("animation")){
+			$( ".mailRight" ).stop(true,true).animate({left: 0}, 300,function(){
+			  $(".icon-mail-zhankai").removeClass("icon-mail-zhankai").addClass("icon-mail-shouqi");	
+			});
+		}
+		else{
+			$( ".mailRight" ).stop(true,true).animate({left: 220}, 300, function(){
+			  $(".icon-mail-shouqi").removeClass("icon-mail-shouqi").addClass("icon-mail-zhankai");
+			});
+		};
+	}
+	
+	function detailOpen(){//打开详情
+		if($(".mailDetail").hasClass("animation")){
+			return false;
+		}
+		else{
+			$( ".mailDetail" ).stop(true,true).animate({left: "50%"}, 200);
+		    $(".mailDetail").addClass("animation");
+		};
+	}
+	
+	function detailClose(){//关闭详情
+		if($(".mailDetail").hasClass("animation")){
+			$( ".mailDetail" ).stop(true,true).animate({left: "100%"}, 200);
+			$(".mailDetail").removeClass("animation");
+		}
+		else{
+			return false;
+		};
+		}
+
+	function checkNavItem(){//check是否仅剩第一个标签
+		if ($(".mailNav").find("a").length<2){
+			$(".mailNav").addClass("mailHide");
+			}
+		};
+		
+	$(".mr-cont .mail-item").on("click",function(){detailOpen()});//条目绑定打开详情
+	
+	$(".mailNav a").on("click",function(){//nav切换选中
+		 $(this).siblings().removeClass("selected");
+		 $(this).addClass("selected");
+		});
+		
+	$(".mailNav .icon-cancel").on("click",function(){//删除nav标签
+	     if($(this).parent().hasClass("selected")){
+			 $(this).parent().prev().addClass("selected");
+		 }
+		 $(this).parent().remove();
+		 checkNavItem();
+		});
+		
+</script>
 </body> 
 </html>
   
