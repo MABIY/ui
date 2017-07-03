@@ -12,7 +12,7 @@ function autoView() {
 	    CurrentHeight = browserHeight - (topHeight + bottomHeight+32);
 	}
 	else{
-		CurrentHeight = browserHeight - (topHeight + bottomHeight+29);
+		CurrentHeight = browserHeight - (topHeight + bottomHeight+30);
 	}
 	var indexPadding = CurrentHeight - $(".indexCont").height();
 	$(".container>.widthControl").css("min-height", CurrentHeight);

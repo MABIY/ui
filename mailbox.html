@@ -34,13 +34,13 @@
     </div>
   </div>  
   <!-- /.top -->
-  <div class="container withBg mailbg"> 
+  <div class="container withBg mailbg">
     <div class="widthControl">
       <div class="cont">
         <div class="breadNav">当前位置：<a href="#">首页</a>&gt;<a href="#">邮箱</a></div>
         <div class="mailCont">
           <div class="mailNav">
-            <a href="#" class="selected">邮件</a><a href="#">未读邮件<i class="iconfont icon-cancel"></i></a><a href="#">新建邮件<i class="iconfont icon-cancel"></i></a>
+            <a href="#" class="selected" onClick="hideFullCont()">邮件</a><a href="#">未读邮件<i class="iconfont icon-cancel"></i></a><a href="#" onClick="showFullCont()">新建邮件<i class="iconfont icon-cancel"></i></a>
           </div>
           <div class="mailLeft scroll">
             <div class="mailLeft-title">我的邮箱</div>
@@ -278,29 +278,61 @@
             <div class="mr-page">
              第1页，共2页
              <div class="pull-right">
-               <a href="#">1</a>
-               <a href="#">2</a>
-               <a href="#">3</a>
-               <a href="#">4</a>
+               <a href="#"><i class="icon icon_front disable"></i></a>
+               <a href="#"><i class="icon icon_left disable"></i></a>
+               <a href="#"><i class="icon icon_right"></i></a> 
+               <a href="#"><i class="icon icon_last"></i></a>  
              </div>
             </div>
-            <div class="mailDetail scroll">
-              123123
+            <div class="mailDetail">
+              <div class="detailHeader">
+                <i class="iconfont icon-mail-reply"></i>
+                <i class="iconfont icon-mail-replyall"></i>
+                <i class="iconfont icon-mail-delete"></i>
+                <i class="iconfont icon-mail-mobile"></i>
+                <i class="iconfont icon-mail-tag"></i>
+                <i class="iconfont icon-mail-forwarding"></i>
+                <div class="pull-right"><i class="iconfont icon-iconmax"></i><i class="iconfont icon-cancel" onClick="detailClose()"></i></div>
+              </div>
+              <div class="dt_title"><i class="mailDot"></i><img src="images/mail_user.png" />李鹏飞</div>
+              <div class="dt_after scroll">
+              <div class="dt_user"><span class="dt_user_title">收件人：</span><span class="name">lipengfei1988</span></div>
+              <div class="dt_article_title">绿城管理集团第三届“全国工地开放日”活动正式启动</div>
+              <div class="dt_cont">
+               <p>4月15日，“绿城品质·匠心传承”——绿城管理集团第三届“全国工地开放日”活动启动仪式，在杭州红五月安置房二期现场举行。绿城中国、绿城管理集团、委托方、业主和媒体等各方代表共同见证了启动仪式，并参观了红五月安置房精益化管理工地。 </p>
+               <p><img src="images/dt_img.png"></p>
+               <p>依托“品质、信任、效益、分享”的企业价值观，绿城管理集团“全国工地开放日”活动，是传承绿城匠心品质重要举措，是对房地产轻资产模式长远发展的战略思考，也是致力于构建代建行业服务标准的行动方案。</p>
+               <p>“用心，用功，用材”，是我们逐渐总结出来的绿城管理品质之道。自首次活动以来，绿城管理坚持通过组织全国范围内的项目开展工地开放日活动，让更多人亲眼观察、亲身感受代建项目在品质营造过程中的用心与坚持，读懂背后的故事。 </p>
+              </div>
+              </div>
             </div>
+          </div>
+          <div class="mailEdit mailHide">
+            <a href="#"><div><i class="iconfont icon-checkbox"></i></div>全选</a>
+            <a href="#"><div><i class="iconfont icon-mail-delete"></i></div>删除<ul><li>删除</li><li>彻底删除</li></ul></a>
+            <a href="#"><div><i class="iconfont icon-mail-mobile"></i></div>移动</a>
+            <a href="#"><div><i class="iconfont icon-mail-forwarding"></i></div>转发</a>
+            <a href="#"><div><i class="iconfont icon-mail-tag"></i></div>标记</a>
+            <a href="#"><div><i class="iconfont icon-mail-reply"></i></div>回复</a>
+            <a href="#"><div><i class="iconfont icon-mail-replyall"></i></div>回复全部</a>
+            <div class="pull-right">已选<span>0</span>项<i class="iconfont icon-cancel"></i></div>
+          </div>
+          <div class="mailFullCont mailHide">
+            <div class="mailCreat-title"><a href="#" class="btn active">发送</a><a href="#" class="btn">存草稿</a><a href="#">添加抄送</a><a href="#">添加密送</a><a href="#">分别发送</a></div>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </div>
   <!-- /.container -->
-  <div class="footer">
+  <div class="footer">  
     <div class="widthControl">© 绿城中国控股有限公司 浙ICP备05064294号-1 <div class="fr"><a href="#">绿城集团官网</a>|<a href="#">意见反馈</a>|<a href="#">智能客服</a><a href="#"><i class="iconfont qrCode"></i>绿城集团微信</a></div></div>
   </div>
   <!-- /.footer --> 
 <script src="js/jquery.min.js"></script>
-<script src="js/common.js"></script>
-<script>
-    function asideToggle(){//展开收起左侧菜单
+<script src="js/common.js"></script> 
+<script>  
+    function asideToggle(){//展开收起左侧菜单 
 		$(".mailRight").toggleClass("animation");
 		if($(".mailRight").hasClass("animation")){
 			$( ".mailRight" ).stop(true,true).animate({left: 0}, 300,function(){
@@ -339,6 +371,17 @@
 			$(".mailNav").addClass("mailHide");
 			}
 		};
+	
+	function showFullCont(){
+		$(".mailLeft").addClass("mailHide");
+		$(".mailRight").addClass("mailHide");
+		$(".mailFullCont").removeClass("mailHide");
+		}
+	function hideFullCont(){
+		$(".mailLeft").removeClass("mailHide");
+		$(".mailRight").removeClass("mailHide");
+		$(".mailFullCont").addClass("mailHide");
+		}
 		
 	$(".mr-cont .mail-item").on("click",function(){detailOpen()});//条目绑定打开详情
 	
