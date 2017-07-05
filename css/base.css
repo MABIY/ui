@@ -317,6 +317,7 @@ n .cal .clndr .clndr-grid .day.calendar-dow-6, .cal .clndr .clndr-grid .day.cale
 .mailEdit .pull-right { line-height: 70px; font-size: 14px; color: #fff; padding-right: 20px; }
 .mailEdit .pull-right .iconfont { color: #c6c6c6; margin-left: 15px; }
 .mailEdit .pull-right .iconfont:hover { color: #333; }
+.field_wrap{line-height: 20px;padding: 10px 0;border-bottom: 1px solid #ffffff;}
 /*--opration style--*/
 .op_cont { background-color: #fff; -webkit-box-shadow: 0 3px 16px rgba(0,0,0,.16); -moz-box-shadow: 0 3px 16px rgba(0,0,0,.16); box-shadow: 0 3px 16px rgba(0,0,0,.16); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 10px 20px; margin-bottom: 20px; }
 .op_bgl { background: url(../images/op_cont_bgl.png) top center no-repeat #fff; }
@@ -360,7 +361,7 @@ n .cal .clndr .clndr-grid .day.calendar-dow-6, .cal .clndr .clndr-grid .day.cale
 .opr_num span b{position: relative;z-index: 5;color: #fff;text-align: center;font-size: 50px;font-weight: bold;line-height: 62px;}
 .opr_num span:before{content: '';height: 30px;position: absolute;top: 0;left: 0;right: 0;background: #ff8e0a;z-index: 2;}
 .op_cont dl{padding: 5px 0px;}
-.op_cont dl dt{border-bottom: 1px solid #eeeeee;padding-left: 7px;font-size: 16px;font-weight: bold;color: #333;line-height: 40px;margin-bottom: 7px;}
+.op_cont dl dt{border-bottom: 1px solid #eeeeee;padding-left: 7px;font-size: 16px;font-weight: bold;color: #333;line-height: 40px;margin-bottom: 7 px;}
 .op_cont dl dd{line-height: 30px;position: relative;padding-left: 25px;font-size: 14px;font-weight: bold;color: #333;white-space: nowrap;overflow: hidden;-ms-text-overflow: ellipsis;text-overflow: ellipsis;}
 .op_cont dl dd:before{content: '';width: 10px;height: 10px;left: 11px;top: 11px;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;background: #ccc;position: absolute;}
 .op_cont dl.op_alert dd:before{background: #f72222;}
