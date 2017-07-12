@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection"/>
+    <title>GreenTown</title>
+    <link href="css/iconfont/iconfont.css" rel="stylesheet">
+    <link href="css/swiper-3.4.2.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/base.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logoicon.png">
+    <script type="text/css">
+        ul{
+            display:inline;
+            white-space: nowrap;
+        }
+        ul li{
+            padding: 10px 20px;
+            display: inline-block;
+            background:pink;
+            white-space:nowrap;
+        }
+        .box{
+            width: 640px;
+            height: 50px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+    </script>
+</head>
+<body onResize="autoView()">
+<div class="wrapper">
+    <div class="top">
+        <div class="widthControl">
+            <a href="#" class="logo"></a>
+            <ul class="topNav">
+                <li>
+                    <a href="#">首页</a>
+                </li>
+                <li>
+                    <a href="#">公共门户</a>
+                </li>
+                <li>
+                    <a href="#" class="hover">运营门户</a>
+                </li>
+                <li>
+                    <a href="#">流程中心</a>
+                </li>
+            </ul>
+            <div class="topLinks">
+                <div class="topSearch"><input type="text" placeholder="请输入关键字"><i class="iconfont icon-search"></i>
+                </div>
+                |<a href="#"><i class="iconfont icon-addresslist"></i>通讯录</a>|<a href="#">绿城中国<i
+                    class="iconfont icon-open"></i></a>|<a href="#"><i class="iconfont icon-info"></i>消息(<b>10</b>)<sup>*</sup></a>|<a
+                    href="#">李江华<i class="iconfont icon-open"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- /.top -->
+    <div class="container withBg oprationbg">
+        <div class="widthControl">
+            <div class="cont">
+                <div class="breadNav">当前位置：<a href="#">运营门户</a>&gt;<a href="#">绿城房产</a>&gt;<a href="#">杭州公司</a>&gt;<a
+                        href="#">绿城翡翠城</a></div>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <div class="op_cont op_bgl">
+                            <div class="op_title">绿城翡翠城</div>
+                            <div class="op_detail clearfix">
+                                <div class="op_img"><img src="images/opImg_01.png"></div>
+                                <div class="op_dt">
+                                    <div class="op_nav clearfix swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <a href="#" class="active">项目概况</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">一期别墅</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">二期配套</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">三期多层</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">四期别墅</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">五期多层</a>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <a href="#">六期配套</a>
+                                            </div>
+                                        </div>
+                                        <!-- 如果需要导航按钮 -->
+                                        <div class="swiper-button-prev"><i class="iconfont icon-switch-left"></i></div>
+                                        <div class="swiper-button-next"><i class="iconfont icon-switch-right"></i></div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <ul>
+                                                <li>
+                                                    <div>总用地面积</div>
+                                                    <span>329.68</span>万方
+                                                </li>
+                                                <li class="yellow">
+                                                    <div>剩余/总可售面积</div>
+                                                    <span>329/470</span>万方
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <ul>
+                                                <li>
+                                                    <div>总用地面积</div>
+                                                    <span>329.68</span>万方
+                                                </li>
+                                                <li class="yellow">
+                                                    <div>剩余/总可售面积</div>
+                                                    <span>329/470</span>万方
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <ul>
+                                                <li>
+                                                    <div>总用地面积</div>
+                                                    <span>329.68</span>万方
+                                                </li>
+                                                <li class="yellow">
+                                                    <div>剩余/总可售面积</div>
+                                                    <span>329/470</span>万方
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="dt_lineChart">
+                                        <div class="title">房源各产品类型可售面积分布图
+                                            <div class="pull-right">单位：万方</div>
+                                        </div>
+                                        <div id="sales_area_distribution_map" style="width: 451px;height:173px;"></div>
+                                        <!--                                        <img src="images/opImg_02.png" style="width:100%">-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="op_pieChart">
+                                <div class="title">2017年经营指标</div>
+                                <div id="operational_indicator"style="background: #F7F7F7;width: 100%;height: 120px;"></div>
+                                <div class="topNav">
+                                    <ul>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>2</li>
+                                        <li>2</li>
+                                        <li>2</li>
+                                        <li>2</li>
+                                    </ul>
+                                </div>
+                                <!--<img src="images/opImg_03.png" style="width:100%">-->
+                            </div>
+                        </div>
+                        <div class="op_cont">
+                            <div class="op_title">重点关注分期节点进度</div>
+                            <div class="op_checkBox">
+               <span>
+                 <input type="checkbox" id="opc_01">
+                 <label for="opc_01">一期</label>
+               </span>
+                                <span>
+                 <input type="checkbox" id="opc_02" checked>
+                 <label for="opc_02">二期</label>
+               </span>
+                                <span>
+                 <input type="checkbox" id="opc_03">
+                 <label for="opc_03">三期</label>
+               </span>
+                                <span>
+                 <input type="checkbox" id="opc_04" checked>
+                 <label for="opc_04">四期</label>
+               </span>
+                                <span>
+                 <input type="checkbox" id="opc_05">
+                 <label for="opc_05">五期</label>
+               </span>
+                                <span>
+                 <input type="checkbox" id="opc_06" checked>
+                 <label for="opc_06">六期</label>
+               </span>
+                            </div>
+                            <div class="statusBar">
+                                <div class="title">二期节点进度</div>
+                                <ul class="nine">
+                                    <li class="finished"><span></span>
+                                        <div><i class="iconfont icon-mail-star"></i></div>
+                                        <div>取得规划方案</div>
+                                        <div>2016-12-12</div>
+                                    </li>
+                                    <li class="finished"><span></span>
+                                        <div></div>
+                                        <div>开工</div>
+                                        <div>2017-02-17</div>
+                                    </li>
+                                    <li class="finished"><span></span>
+                                        <div></div>
+                                        <div>取得施工证</div>
+                                        <div>2017-02-17</div>
+                                    </li>
+                                    <li class="alerted"><span></span>
+                                        <div></div>
+                                        <div>示范区开放</div>
+                                        <div>2017-03-18</div>
+                                    </li>
+                                    <li class="alerted"><span></span>
+                                        <div></div>
+                                        <div>取得预售证</div>
+                                        <div>2017-04-02</div>
+                                    </li>
+                                    <li class="alerted"><span></span>
+                                        <div><i class="iconfont icon-mail-star"></i></div>
+                                        <div>开盘</div>
+                                        <div>2017-04-09</div>
+                                    </li>
+                                    <li class="alerted"><i class="st_dot"><span>2017-04-24</span></i><span></span>
+                                        <div><i class="iconfont icon-mail-star"></i></div>
+                                        <div>主体结构封顶</div>
+                                        <div>2017-08-23</div>
+                                    </li>
+                                    <li><span></span>
+                                        <div></div>
+                                        <div>竣备</div>
+                                        <div>2018-12-02</div>
+                                    </li>
+                                    <li><span></span>
+                                        <div></div>
+                                        <div>交付</div>
+                                        <div>2019-01-02</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="statusBar">
+                                <div class="title">三期节点进度</div>
+                                <ul class="eight">
+                                    <li class="finished"><span></span>
+                                        <div><i class="iconfont icon-mail-star"></i></div>
+                                        <div>取得规划方案</div>
+                                        <div>2016-12-12</div>
+                                    </li>
+                                    <li class="finished"><span></span>
+                                        <div></div>
+                                        <div>开工</div>
+                                        <div>2017-02-17</div>
+                                    </li>
+                                    <li class="finished"><span></span>
+                                        <div></div>
+                                        <div>取得施工证</div>
+                                        <div>2017-02-17</div>
+                                    </li>
+                                    <li class="alerted"><span></span>
+                                        <div></div>
+                                        <div>示范区开放</div>
+                                        <div>2017-03-18</div>
+                                    </li>
+                                    <li class="alerted"><span></span>
+                                        <div></div>
+                                        <div>取得预售证</div>
+                                        <div>2017-04-02</div>
+                                    </li>
+                                    <li class="alerted"><span></span>
+                                        <div><i class="iconfont icon-mail-star"></i></div>
+                                        <div>开盘</div>
+                                        <div>2017-04-09</div>
+                                    </li>
+                                    <li class="alerted"><i class="st_dot"><span>2017-04-24</span></i><span></span>
+                                        <div><i class="iconfont icon-mail-star"></i></div>
+                                        <div>主体结构封顶</div>
+                                        <div>2017-08-23</div>
+                                    </li>
+                                    <li><span></span>
+                                        <div></div>
+                                        <div>交付</div>
+                                        <div>2019-01-02</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="op_cont">
+                            <div class="op_title">项目文档/节点成果</div>
+                            <table class="lineTable">
+                                <tr>
+                                    <th class="aLeft">文档名称</th>
+                                    <th>分期</th>
+                                    <th>专业</th>
+                                    <th>阶段</th>
+                                    <th>文档类型</th>
+                                    <th>版本</th>
+                                    <th>更新日期</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr>
+                                    <td class="aLeft">绿城设计管理项目</td>
+                                    <td>三期</td>
+                                    <td>建筑</td>
+                                    <td>方案设计</td>
+                                    <td>2016-10-31</td>
+                                    <td>DOC</td>
+                                    <td>2017-04-14</td>
+                                    <td><i class="icon icon-download"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="aLeft">绿城设计管理项目</td>
+                                    <td>三期</td>
+                                    <td>建筑</td>
+                                    <td>方案设计</td>
+                                    <td>2016-10-31</td>
+                                    <td>DOC</td>
+                                    <td>2017-04-14</td>
+                                    <td><i class="icon icon-download"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="aLeft">绿城设计管理项目</td>
+                                    <td>三期</td>
+                                    <td>建筑</td>
+                                    <td>方案设计</td>
+                                    <td>2016-10-31</td>
+                                    <td>DOC</td>
+                                    <td>2017-04-14</td>
+                                    <td><i class="icon icon-download"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="aLeft">绿城设计管理项目</td>
+                                    <td>三期</td>
+                                    <td>建筑</td>
+                                    <td>方案设计</td>
+                                    <td>2016-10-31</td>
+                                    <td>DOC</td>
+                                    <td>2017-04-14</td>
+                                    <td><i class="icon icon-download"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="aLeft">绿城设计管理项目</td>
+                                    <td>三期</td>
+                                    <td>建筑</td>
+                                    <td>方案设计</td>
+                                    <td>2016-10-31</td>
+                                    <td>DOC</td>
+                                    <td>2017-04-14</td>
+                                    <td><i class="icon icon-download"></i></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="op_cont op_bgr">
+                            <div class="opr_label">倒计时</div>
+                            <div class="opr_div">距离绿城翡翠城一期<span>开盘</span>还剩</div>
+                            <div class="opr_num"><span><b>1</b></span><span><b>3</b></span>天</div>
+                        </div>
+                        <div class="op_cont">
+                            <dl class="op_alert">
+                                <dt>计划预警节点（3）</dt>
+                                <dd>【一期】示范区开放（景观、售楼处）</dd>
+                                <dd>【一期】取得预售证</dd>
+                                <dd>【一期】开盘</dd>
+                            </dl>
+                            <dl class="op_delay">
+                                <dt>计划延误节点（3）</dt>
+                                <dd>【一期】示范区开放（景观、售楼处）</dd>
+                                <dd>【一期】取得预售证</dd>
+                                <dd>【一期】开盘</dd>
+                            </dl>
+                            <dl>
+                                <dt>执行中需汇报节点（3）</dt>
+                                <dd>【一期】示范区开放（景观、售楼处）</dd>
+                                <dd>【一期】取得预售证</dd>
+                                <dd>【一期】开盘</dd>
+                            </dl>
+                            <dl>
+                                <dt>本月开始节点（3）</dt>
+                                <dd>【一期】示范区开放（景观、售楼处）</dd>
+                                <dd>【一期】取得预售证</dd>
+                                <dd>【一期】开盘</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+    <div class="footer">
+        <div class="widthControl">© 绿城中国控股有限公司 浙ICP备05064294号-1
+            <div class="fr"><a href="#">绿城集团官网</a>|<a href="#">意见反馈</a>|<a href="#">智能客服</a><a href="#"><i
+                    class="iconfont qrCode"></i>绿城集团微信</a></div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper-3.4.2.jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script type="text/javascript">
+
+        // 房源各产品类型可售面积分布图方法对象
+        var sales_area_distribution_map = {
+                // 获取可销售面积
+                canBuyArea: function (items) {
+                    var values = new Array();
+                    $.each(items, function (index, value) {
+                        values[index] = value.vendible;
+                    });
+                    return values.reverse();
+                },
+
+                //获取已销售面积
+                hasSoldArea: function (items) {
+                    var values = new Array();
+                    $.each(items, function (index, value) {
+                        values[index] = value.sold;
+                    });
+                    return values.reverse();
+                },
+
+                //获取 房型类别数据
+                getRoomType: function (items) {
+                    var values = new Array();
+                    $.each(items, function (index, value) {
+                        values[index] = value.type;
+                    })
+                    return values.reverse();
+                }
+
+                ,
+                //房源各产品类型可售面积分布图 渲染
+                rendering: function (response) {
+                    // 指定图表的配置项和数据
+
+                    var option = {
+                        backgroundColor:"#F7F7F7",
+                        grid: {
+                            top: 0,
+                            bottom: 19
+                        },
+                        title: {},
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                            }
+                        },
+                        legend: {},
+                        calculable: false,
+                        xAxis: [
+                            {
+                                type: 'value',
+                                boundaryGap: [0, 0.01],
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: 'category',
+                                data: sales_area_distribution_map.getRoomType(response.projectBasicInfo[0].productTypeInfo)
+                            },
+                        ],
+                        series: [
+                            {
+                                name: '可销面积',
+                                type: 'bar',
+                                data: sales_area_distribution_map.canBuyArea(response.projectBasicInfo[0].productTypeInfo)
+                            },
+                            {
+                                name: '已销面积',
+                                type: 'bar',
+                                data: sales_area_distribution_map.hasSoldArea(response.projectBasicInfo[0].productTypeInfo)
+                            }
+                        ],
+                        color: ['#5FBA76', '#FFA945'],
+
+                    };
+                    myChart = echarts.init(document.getElementById('sales_area_distribution_map'));
+                    // 使用刚指定的配置项和数据显示图表。
+                    myChart.setOption(option);
+                }
+            }
+        ;
+
+        $(function () {
+            var params = {
+                "request_id": "get_project_portal_info",
+                "user_id": "zhudandan",
+                "project_code": "PRJ00008",
+                "portal_level": "3",
+                "token": "Ku1tt0kY4kC2oXPDynl0Dy"
+            };
+
+            var response;
+            var myChart;
+
+            $.ajax({
+                url: 'http://101.37.224.97:73/PlanSystemPortal/Interface/Interface.aspx',
+                data: JSON.stringify(params),
+                type: "POST", /* or type:"GET" or type:"PUT" */
+                dataType: "text",
+                success: function (result) {
+                    console.log("result value:" + result)
+                    var m = JSON.parse(result);
+                    console.log("first convert JSON.parse value:" + m);
+                    response = JSON.parse(m.totalRespone);
+                    sales_area_distribution_map.rendering(response);
+                    operational_indicator_map.rendering(response);
+                },
+                error: function (data) {
+                    console.log(data + "");
+                }
+            });
+
+
+            $(".op_nav a").on("click", function () {
+                $(".op_nav a").removeClass("active");
+                $(this).addClass("active");
+            });
+            if ($(".swiper-wrapper .swiper-slide").length > 5) {
+                var navSwiper = new Swiper('.swiper-container', {
+                    loop: false,
+                    slidesPerView: 5,
+                    // 如果需要前进后退按钮
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                });
+            }
+            ;
+        })
+
+        var operational_indicator_map = {
+
+            //获取经营指标名称
+            mapRelevanceName: function (response) {
+                $.each(response.yearlyQuota, function (index, value) {
+                    $("#summary"+index).html(value);
+                });
+
+            },
+            rendering :function (response) {
+                var labelTop_orange = {
+                    normal : {
+                        label : {
+                            show : true,
+                            position : 'center',
+                            formatter : '{b}',
+                            textStyle: {
+                                fontSize: 15,
+                                baseline : 'bottom'
+                            },
+                        },
+                        color: "#FFA945",
+                        borderColor: "#FFA945",
+                        borderWidth: 6,
+                        labelLine : {
+                            show : false
+                        }
+                    },
+                    emphasis: {
+                        color: '#FFA945'
+                    }
+
+                };
+                var labelBottom_orange = {
+                    normal : {
+                        label : {
+                            show : true,
+                            position : 'center'
+                        },
+                        labelLine : {
+                            show : false
+                        },
+                        color:'#FAC78A',
+                        borderColor: "#FAC78A",
+                    },
+                    emphasis: {
+                        show:false,
+                        color: '#FAC78A'
+                    }
+                };
+                var labelTop_blue = {
+                    normal : {
+                        label : {
+                            show : true,
+                            position : 'center',
+                            formatter : '{b}',
+                            textStyle: {
+                                fontSize:15,
+                                baseline : 'bottom'
+                            }
+                        },
+                        color: "#5EBB75",
+                        borderColor: "#5EBB75",
+                        borderWidth: 6,
+                        labelLine : {
+                            show : false
+                        }
+                    }
+                    ,
+                    emphasis: {
+                        color: '#5EBB75'
+                    }
+                };
+                var labelBottom_blue = {
+                    normal : {
+                        label : {
+                            show : true,
+                            position : 'center'
+                        },
+                        labelLine : {
+                            show : false
+                        },
+                        color:"#B4EEBC",
+                        borderColor: "#B4EEBC",
+                    },
+
+                    emphasis: {
+                        show:false,
+                        color: '#B4EEBC'
+                    }
+                };
+                var labelFromatter_orange = {
+                    normal : {
+                        label : {
+                            formatter : function (params){
+                                return  params.data.name;
+                            },
+                            textStyle: {
+                                fontSize:15,
+                                color:'#FFA945',
+                                fontWeight:'bold',
+                                baseline : 'top'
+                            }
+                        }
+                    },
+                    emphasis: {
+                        color: '#FFA945'
+                    }
+                };
+                var labelFromatter_blue = {
+                    normal : {
+                        label : {
+                            formatter : function (params){
+                                return  params.data.name;
+                            },
+                            textStyle: {
+                                fontSize:15,
+                                color:'#5EBB75',
+                                fontWeight:'bold',
+                                baseline : 'top'
+                            }
+                        }
+                    },
+                    emphasis: {
+                        show:false,
+                        color: '#5EBB75'
+                    }
+                };
+
+                var radius = [40, 45];
+                option = {
+                    backgroundColor:"#F7F7F7",
+                    grid: {
+        /*                top: -100,
+                        bottom: -100*/
+                    },
+                    legend: {
+                        x : 'center',
+                        y : 'center',
+                        data:[
+
+                        ]
+                    },
+                    series : [
+                        {
+                            type : 'pie',
+                            center : ['10%', '50%'],
+                            radius : radius,
+                            hoverAnimation:false,
+                            legendHoverLink:false,
+                            x: '0%', // for funnel
+                            itemStyle : labelFromatter_orange,
+                            data : [
+                                {name:response.yearlyQuota[0].actualValue +" " +response.yearlyQuota[0].unit, value:response.yearlyQuota[0].actualValue, itemStyle : labelTop_orange},
+                                {name:response.yearlyQuota[0].planValue + " " + response.yearlyQuota[0].unit, value:(response.yearlyQuota[0].planValue-response.yearlyQuota[0].actualValue),itemStyle : labelBottom_orange}
+
+                            ]
+                        },
+                        {
+                            type : 'pie',
+                            center : ['26%', '50%'],
+                            radius : radius,
+                            hoverAnimation:false,
+                            legendHoverLink:false,
+                            x:'20%', // for funnel
+                            itemStyle : labelFromatter_blue,
+                            data : [
+                                {name:response.yearlyQuota[1].actualValue +" " +response.yearlyQuota[1].unit, value:response.yearlyQuota[1].actualValue, itemStyle : labelTop_blue},
+                                {name:response.yearlyQuota[1].planValue + " " + response.yearlyQuota[1].unit, value:response.yearlyQuota[1].planValue-response.yearlyQuota[1].actualValue,itemStyle :labelBottom_blue }
+                            ]
+                        },
+                        {
+                            type : 'pie',
+                            center : ['42%', '50%'],
+                            radius : radius,
+                            hoverAnimation:false,
+                            legendHoverLink:false,
+                            x:'40%', // for funnel
+                            itemStyle : labelFromatter_orange,
+                            data : [
+                                {name:response.yearlyQuota[2].actualValue +" " +response.yearlyQuota[2].unit, value:response.yearlyQuota[2].actualValue, itemStyle :  labelTop_orange},
+                                {name:response.yearlyQuota[2].planValue + " " + response.yearlyQuota[2].unit, value:response.yearlyQuota[2].planValue-response.yearlyQuota[2].actualValue,itemStyle : labelBottom_orange}
+                            ]
+                        },
+                        {
+                            type : 'pie',
+                            center : ['58%', '50%'],
+                            radius : radius,
+                            hoverAnimation:false,
+                            legendHoverLink:false,
+                            x:'60%', // for funnel
+                            itemStyle : labelFromatter_blue,
+                            data : [
+                                {name:response.yearlyQuota[3].actualValue +" " +response.yearlyQuota[3].unit, value:response.yearlyQuota[3].actualValue, itemStyle :  labelTop_blue},
+                                {name:response.yearlyQuota[3].planValue + " " + response.yearlyQuota[3].unit, value:response.yearlyQuota[3].planValue-response.yearlyQuota[3].actualValue,itemStyle :labelBottom_blue }
+                            ]
+                        },
+                        {
+                            type : 'pie',
+                            center : ['74%', '50%'],
+                            radius : radius,
+                            hoverAnimation:false,
+                            legendHoverLink:false,
+                            x:'80%', // for funnel
+                            itemStyle : labelFromatter_orange,
+                            data : [
+                                {name:response.yearlyQuota[4].actualValue +" " +response.yearlyQuota[4].unit, value:response.yearlyQuota[4].actualValue, itemStyle :  labelTop_orange},
+                                {name:response.yearlyQuota[4].planValue + " " + response.yearlyQuota[4].unit, value:response.yearlyQuota[4].planValue-response.yearlyQuota[4].actualValue,itemStyle : labelBottom_orange}
+                            ]
+                        },
+                        {
+                            type : 'pie',
+                            center : ['90%', '50%'],
+                            radius : radius,
+                            hoverAnimation:false,
+                            legendHoverLink:false,
+                            y: '55%',   // for funnel
+                            x: '0%',    // for funnel
+                            itemStyle : labelFromatter_blue,
+                            data : [
+                                {name:response.yearlyQuota[5].actualValue +" " +response.yearlyQuota[5].unit, value:response.yearlyQuota[5].actualValue, itemStyle : labelTop_blue},
+                                {name:response.yearlyQuota[5].planValue + " " + response.yearlyQuota[5].unit, value:response.yearlyQuota[5].planValue-response.yearlyQuota[5].actualValue,itemStyle :labelBottom_blue }
+                            ]
+                        }
+                    ],
+                };
+
+                myChart = echarts.init(document.getElementById('operational_indicator'));
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        }
+
+    </script>
+</body>
+</html>
+  

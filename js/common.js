@@ -31,3 +31,12 @@ function autoView() {
 function topBannerSlide(){
 	$(".topBanner").slideToggle("fast");
 	};
+
+
+var interfaceUrl = 'http://101.37.224.97:73/PlanSystemPortal/Interface/Interface.aspx';
+
+function getJsonResponse(result){
+    result = $.parseJSON(result);
+    var totalRespone = $.parseJSON(result.totalRespone);
+    return totalRespone;
+}
